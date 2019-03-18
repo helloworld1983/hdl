@@ -395,6 +395,14 @@ proc adi_auto_fill_bd_tcl {} {
   puts $bd_tcl "      set_property CONFIG.\$i \$val \$ip"
   puts $bd_tcl "    }"
   puts $bd_tcl "  }"
+  puts $bd_tcl ""
+  puts $bd_tcl "  # Find predefindes auto assignable/overwritable parameters"
+  puts $bd_tcl "  foreach i \$auto_set_param_list_overwritable {"
+  puts $bd_tcl "    if { \[lsearch \$ip_param_list \"CONFIG.\$i\"\] > 0 } {"
+  puts $bd_tcl "      set val \[adi_device_spec \$cellpath \$i\]"
+  puts $bd_tcl "      set_property CONFIG.\$i \$val \$ip"
+  puts $bd_tcl "    }"
+  puts $bd_tcl "  }"
   puts $bd_tcl "}"
   puts $bd_tcl ""
   close $bd_tcl
@@ -403,9 +411,15 @@ proc adi_auto_fill_bd_tcl {} {
 proc adi_add_auto_fpga_spec_params {} {
 
   global auto_set_param_list
+  global auto_set_param_list_overwritable
   set cc [ipx::current_core]
 
   foreach i $auto_set_param_list {
+    if { [ipx::get_user_parameters $i -of_objects $cc -quiet] ne ""} {
+      adi_add_device_spec_param $i
+    }
+  }
+  foreach i $auto_set_param_list_overwritable {
     if { [ipx::get_user_parameters $i -of_objects $cc -quiet] ne ""} {
       adi_add_device_spec_param $i
     }
