@@ -107,7 +107,7 @@ module axi_hdmi_tx #(
   localparam  EMBEDDED_SYNC = (INTERFACE == "16_BIT_EMBEDDED_SYNC") ? 1 : 0;
   localparam  XILINX_7SERIES = 0;
   localparam  XILINX_ULTRASCALE = 1;
-  localparam  ALTERA_5SERIES = 16;
+  localparam  INTEL_5SERIES = 16;
 
   // reset and clocks
 
@@ -310,7 +310,7 @@ module axi_hdmi_tx #(
     .C (hdmi_clk),
     .Q (hdmi_out_clk));
   end
-  if (DEVICE_TYPE == ALTERA_5SERIES) begin
+  if (DEVICE_TYPE == INTEL_5SERIES) begin
   altddio_out #(.WIDTH(1)) i_clk_oddr (
     .aclr (1'b0),
     .aset (1'b0),
