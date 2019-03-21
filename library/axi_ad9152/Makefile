@@ -11,11 +11,6 @@ XILINX_DEPS += axi_ad9152_ip.tcl
 
 XILINX_LIB_DEPS += jesd204/ad_ip_jesd204_tpl_dac
 
-INTEL_DEPS += ../intel/common/ad_mul.v
-INTEL_DEPS += ../intel/common/up_clock_mon_constr.sdc
-INTEL_DEPS += ../intel/common/up_rst_constr.sdc
-INTEL_DEPS += ../intel/common/up_xfer_cntrl_constr.sdc
-INTEL_DEPS += ../intel/common/up_xfer_status_constr.sdc
 INTEL_DEPS += ../common/ad_dds.v
 INTEL_DEPS += ../common/ad_dds_1.v
 INTEL_DEPS += ../common/ad_dds_2.v
@@ -30,13 +25,18 @@ INTEL_DEPS += ../common/up_dac_channel.v
 INTEL_DEPS += ../common/up_dac_common.v
 INTEL_DEPS += ../common/up_xfer_cntrl.v
 INTEL_DEPS += ../common/up_xfer_status.v
+INTEL_DEPS += ../intel/common/ad_mul.v
+INTEL_DEPS += ../intel/common/up_clock_mon_constr.sdc
+INTEL_DEPS += ../intel/common/up_rst_constr.sdc
+INTEL_DEPS += ../intel/common/up_xfer_cntrl_constr.sdc
+INTEL_DEPS += ../intel/common/up_xfer_status_constr.sdc
+INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_common/up_tpl_common.v
 INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_dac/ad_ip_jesd204_tpl_dac.v
 INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_dac/ad_ip_jesd204_tpl_dac_channel.v
 INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_dac/ad_ip_jesd204_tpl_dac_core.v
 INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_dac/ad_ip_jesd204_tpl_dac_framer.v
 INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_dac/ad_ip_jesd204_tpl_dac_pn.v
 INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_dac/ad_ip_jesd204_tpl_dac_regmap.v
-INTEL_DEPS += ../jesd204/ad_ip_jesd204_tpl_common/up_tpl_common.v
 INTEL_DEPS += axi_ad9152_hw.tcl
 
 include ../scripts/library.mk

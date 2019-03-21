@@ -17,14 +17,6 @@ LIB_DEPS += axi_dmac
 LIB_DEPS += axi_hdmi_tx
 LIB_DEPS += axi_i2s_adi
 LIB_DEPS += axi_spdif_tx
-<<<<<<< HEAD
-LIB_DEPS += util_clkdiv
-||||||| merged common ancestors
-LIB_DEPS += util_clkdiv
-LIB_DEPS += util_cpack
-=======
-LIB_DEPS += util_cpack
->>>>>>> util_clkdiv: Seperate the IP source into an intel and xilinx version
 LIB_DEPS += util_i2c_mixer
 LIB_DEPS += util_pack/util_cpack2
 LIB_DEPS += util_pack/util_upack2

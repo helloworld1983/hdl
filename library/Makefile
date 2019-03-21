@@ -90,7 +90,6 @@ clean:
 	$(MAKE) -C util_bsplit clean
 	$(MAKE) -C util_cdc clean
 	$(MAKE) -C util_cic clean
-	$(MAKE) -C util_clkdiv clean
 	$(MAKE) -C util_dacfifo clean
 	$(MAKE) -C util_delay clean
 	$(MAKE) -C util_extract clean
@@ -199,7 +198,6 @@ lib:
 	$(MAKE) -C util_bsplit
 	$(MAKE) -C util_cdc
 	$(MAKE) -C util_cic
-	$(MAKE) -C util_clkdiv
 	$(MAKE) -C util_dacfifo
 	$(MAKE) -C util_delay
 	$(MAKE) -C util_extract
